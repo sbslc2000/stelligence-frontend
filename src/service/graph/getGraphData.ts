@@ -169,10 +169,10 @@ const getGraphData = async (): Promise<Graph> => {
   ];
 
   // 노드에 대한 링크 (parent-child 관계)
-  const links = nodes.slice(1, 1).map((node, index) => ({
+  const links = nodes.slice(1, 1).map((node) => {return {
     source: '1',
     target: node.id,
-  })).concat([
+  }}).concat([
     // 알고리즘 하위 카테고리 연결
     { source: '2', target: '11' },
     { source: '2', target: '12' },
